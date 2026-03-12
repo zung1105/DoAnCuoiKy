@@ -1,0 +1,199 @@
+﻿/* Khởi tạo cơ bản */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Nền phía sau (Bạn có thể thay đổi URL ảnh nền) */
+.login-background {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://images.unsplash.com/photo-1513569536233-68d1dbb5b993?q=80&w=2000&auto=format&fit=crop'); /* Ảnh nền demo ô tô giống thiết kế */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Khung trắng (Card) */
+.login-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 16px;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Nút X đóng popup */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+}
+
+/* Placeholder Logo tròn */
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #c4c4c4;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+}
+
+/* Tiêu đề */
+.login-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.signup-text {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+    .signup-text a {
+        color: #333;
+        text-decoration: underline;
+    }
+
+/* Nút Social */
+.social-btn {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 30px; /* Bo góc dạng viên thuốc */
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4b5563;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+    .social-btn:hover {
+        background-color: #f9fafb;
+    }
+
+.text-blue {
+    color: #1877f2;
+    font-size: 18px;
+}
+
+.google-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Đường kẻ chữ OR */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+    .divider::before, .divider::after {
+        content: '';
+        flex: 1;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .divider span {
+        padding: 0 15px;
+    }
+
+/* Các ô nhập liệu */
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group label {
+        display: block;
+        font-size: 13px;
+        color: #6b7280;
+        margin-bottom: 8px;
+    }
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+    .form-control:focus {
+        border-color: #9ca3af;
+    }
+
+/* Hiệu ứng Ẩn/Hiện mật khẩu */
+.password-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-password {
+    font-size: 13px;
+    color: #6b7280;
+    cursor: pointer;
+    user-select: none;
+}
+
+    .toggle-password i {
+        margin-right: 4px;
+    }
+
+.forgot-password {
+    text-align: right;
+    margin-top: 8px;
+}
+
+    .forgot-password a {
+        font-size: 13px;
+        color: #374151;
+        text-decoration: underline;
+    }
+
+/* Nút Submit */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #c4c4c4; /* Màu xám giống thiết kế */
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+    .submit-btn:hover {
+        background-color: #a0a0a0;
+    }

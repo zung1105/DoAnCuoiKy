@@ -1,0 +1,67 @@
+﻿@page "/DangNhap"
+@model MyApp.Pages.DangNhapModel
+@{
+    Layout = null; // Tắt layout mặc định để thiết kế full màn hình
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<body>
+    <div class="login-background">
+        <div class="login-card">
+            <button class="close-btn">&times;</button>
+
+            <div class="logo-circle"></div>
+
+            <h1 class="login-title">Log in</h1>
+            <p class="signup-text">Don't have an account? <a href="/DangKy">Sign up</a></p>
+
+            <button class="social-btn" type="button">
+                <i class="fa-brands fa-facebook text-blue"></i> Log in with Facebook
+            </button>
+            <button class="social-btn" type="button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="google-icon" /> Log in with Google
+            </button>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <form method="post" class="login-form">
+                <div class="form-group">
+                    <label asp-for="Input.Email">Your email</label>
+                    <input asp-for="Input.Email" type="email" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <div class="password-header">
+                        <label asp-for="Input.Password">Your password</label>
+                        <span class="toggle-password" id="togglePassword">
+                            <i class="fa-solid fa-eye-slash" id="toggleIcon"></i> <span id="toggleText">Hide</span>
+                        </span>
+                    </div>
+                    <input asp-for="Input.Password" type="password" class="form-control" id="passwordInput" />
+
+                    <div class="forgot-password">
+                        <a href="#">Forget your password</a>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Log in</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="~/js/login.js"></script>
+</body>
+</html>
