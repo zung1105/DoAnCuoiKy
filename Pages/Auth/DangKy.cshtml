@@ -1,0 +1,85 @@
+﻿@page "/DangKy"
+@model MyApp.Pages.DangKyModel
+@{
+    Layout = null; // Tắt layout mặc định để thiết kế full màn hình
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="~/css/register.css" />
+</head>
+<body>
+    <div class="register-background">
+        <div class="register-card">
+            <a href="/" class="close-btn">&times;</a>
+
+            <div class="logo-circle"></div>
+
+            <h1 class="register-title">Create an account</h1>
+            <p class="switch-page-text">Already have an account? <a asp-page="/DangNhap">Log in</a></p>
+
+            <button class="social-btn" type="button">
+                <i class="fa-brands fa-facebook text-blue"></i> Sign up with Facebook
+            </button>
+            <button class="social-btn" type="button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="google-icon" /> Sign up with Google
+            </button>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <form method="post" class="register-form">
+                <div class="form-group">
+                    <label asp-for="Input.Email">Your email</label>
+                    <input asp-for="Input.Email" type="email" class="form-control" placeholder="name@example.com" required />
+                    <span asp-validation-for="Input.Email" class="error-text"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="password-header">
+                        <label asp-for="Input.Password">Create password</label>
+                        <span class="toggle-password" id="togglePassword">
+                            <i class="fa-solid fa-eye-slash" id="toggleIcon"></i> <span id="toggleText">Hide</span>
+                        </span>
+                    </div>
+                    <input asp-for="Input.Password" type="password" class="form-control" id="passwordInput" placeholder="At least 8 characters" required />
+                    <span asp-validation-for="Input.Password" class="error-text"></span>
+                </div>
+
+                <button type="submit" class="submit-btn">Sign up</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const passwordInput = document.querySelector('#passwordInput');
+        const toggleIcon = document.querySelector('#toggleIcon');
+        const toggleText = document.querySelector('#toggleText');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+
+            if (type === 'text') {
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+                toggleText.textContent = 'Show';
+            } else {
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+                toggleText.textContent = 'Hide';
+            }
+        });
+    </script>
+</body>
+</html>

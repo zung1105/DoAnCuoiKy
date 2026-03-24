@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using DoAnCuoiKy.Model;
 
-
-namespace DoAnCuoiKy.Pages.Data
+namespace DoAnCuoiKy.Data
 {
     public class AppDbContext : DbContext
     {
@@ -11,10 +11,11 @@ namespace DoAnCuoiKy.Pages.Data
         {
         }
 
+        public DbSet<User> Users { get; set; }
         // ⚠ RẤT QUAN TRỌNG:
         // OnModelCreating dùng để cấu hình quan hệ giữa các bảng
         // Khi Fluent API cần can thiệp (như sửa cascade delete)
-        
+
 
         // DbSet đại diện cho bảng trong database
         // => Tạo bảng Wallets
