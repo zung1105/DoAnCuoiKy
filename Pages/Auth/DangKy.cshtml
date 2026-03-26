@@ -81,5 +81,12 @@
             }
         });
     </script>
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <script>
+            // Html.Raw giúp định dạng lại chuỗi cho an toàn trong JavaScript
+            alert('@Html.Raw(Model.ErrorMessage)');
+        </script>
+    }
 </body>
 </html>

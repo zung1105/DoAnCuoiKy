@@ -56,7 +56,7 @@ namespace MyApp.Pages
             if (emailExists)
             {
                 // Nếu có rồi thì báo lỗi và dừng lại
-                ErrorMessage = "This email is already registered. Please use another one or log in.";
+                ErrorMessage = "Tài khoản email đã tồn tại vui lòng chọn tài khoản khác.";
                 return Page();
             }
 

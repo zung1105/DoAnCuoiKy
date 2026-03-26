@@ -61,7 +61,8 @@ namespace MyApp.Pages
             }
             else
             {
-                return Redirect("/DangNhap");
+                ErrorMessage = "Thông tin đăng nhập không hợp lê";
+                return Page();
             }
         }
 

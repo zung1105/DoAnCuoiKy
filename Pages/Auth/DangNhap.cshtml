@@ -62,6 +62,11 @@
     </div>
 
     <script src="~/js/login.js"></script>
-    @* <script> document.cookie="username=nguyenvana"</script> *@
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <script>
+            alert('@Html.Raw(Model.ErrorMessage)');
+        </script>
+    }
 </body>
 </html>
